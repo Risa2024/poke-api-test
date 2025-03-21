@@ -35,6 +35,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #ee1515;
+  text-shadow: -2px -2px 0 #ffde00, 2px -2px 0 #ffde00,
+    -2px 2px 0 #ffde00, 2px 2px 0 #ffde00;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 #app {
@@ -72,16 +77,20 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ee1515;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
 }
 button:hover {
-  border-color: #646cff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(238, 21, 21, 0.3);
+  border-color: transparent;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(238, 21, 21, 0.3);
 }
 
 @media (prefers-color-scheme: light) {
@@ -93,7 +102,8 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ee1515;
+    color: white;
   }
 }
 
@@ -110,7 +120,6 @@ input {
 
 .result {
   padding: 20px;
-  border: 1px solid #fff;
   margin-top: 20px;
   width: 300px;
   text-align: center;
@@ -134,12 +143,32 @@ input {
 .suggestion-item {
   padding: 8px 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
   color: #213547;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* 雷マークのスタイル */
+.suggestion-item::before {
+  content: "⚡";
+  margin-right: 8px;
+  color: #ee1515; /* ポケモンの赤色 */
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
 }
 
 .suggestion-item:hover {
   background-color: #f0f0f0;
+  padding-left: 20px; /* ホバー時に少し右にずらす */
+}
+
+/* ホバー時に雷マークを表示 */
+.suggestion-item:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -154,5 +183,9 @@ input {
 
   .suggestion-item:hover {
     background-color: #3a3a3a;
+  }
+
+  .suggestion-item::before {
+    color: #ee1515; /* ダークモードでも赤色を維持 */
   }
 }
