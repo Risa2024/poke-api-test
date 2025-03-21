@@ -33,13 +33,15 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 4em;
+  line-height: 1.5;
   color: #ee1515;
-  text-shadow: -2px -2px 0 #ffde00, 2px -2px 0 #ffde00,
-    -2px 2px 0 #ffde00, 2px 2px 0 #ffde00;
+  text-shadow: -3px -3px 0 #ffde00, /* 2pxから3pxに変更 */ 3px -3px 0 #ffde00,
+    /* 2pxから3pxに変更 */ -3px 3px 0 #ffde00,
+    /* 2pxから3pxに変更 */ 3px 3px 0 #ffde00; /* 2pxから3pxに変更 */
   margin-bottom: 2rem;
   text-align: center;
+  font-weight: bold; /* フォントの太さも追加 */
 }
 
 #app {
@@ -119,16 +121,26 @@ input {
 }
 
 .result {
-  padding: 20px;
+  padding: 30px;
   margin-top: 20px;
-  width: 300px;
+  width: 400px;
   text-align: center;
+}
+
+.result img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 .result dl,
 .result dt,
 .result dd {
   margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffde00;
 }
 
 .suggestion-list {
