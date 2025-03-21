@@ -222,7 +222,6 @@ input:focus {
   padding: 8px 16px;
   font-size: 0.8em;
   box-shadow: 0 3px 0 #1a1b2e;
-  display: none; /* 初期状態で非表示にする */
 }
 
 .cry-icon {
