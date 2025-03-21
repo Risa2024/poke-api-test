@@ -5,8 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon Database</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="subtitle">Let's find your Pokémon !</div>
     <h1>Pokemon Database</h1>
 
     <form id="js-form" class="form">
@@ -14,13 +19,36 @@
       <button type="submit">Get Data</button>
     </form>
 
-    <div class="result" id="js-result"></div>
+    <div id="js-result" class="result">
+      <div class="pokemon-info hidden">
+        <dl>
+          <div class="info-row">
+            <dt>Name:</dt>
+            <dd id="pokemon-name"></dd>
+          </div>
+        </dl>
+        <div class="pokemon-container">
+          <img id="pokemon-image" src="" alt="" class="pokemon-image" />
+        </div>
+        <dl>
+          <div class="info-row">
+            <dt>Type:</dt>
+            <dd id="pokemon-type"></dd>
+          </div>
+        </dl>
+        <button id="cry-button" class="cry-button">
+          <span class="cry-icon">🔊</span> Play Cry
+        </button>
+        <audio id="pokemonCry" src=""></audio>
+      </div>
+      <div class="suggestion-list"></div>
+    </div>
 
     <p>
       <a
         href="https://wiki.xn--rckteqa2e.com/wiki/%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%81%AE%E5%A4%96%E5%9B%BD%E8%AA%9E%E5%90%8D%E4%B8%80%E8%A6%A7"
         target="_blank"
-        >You can find Pokemon names in English here</a
+        >🔍 You can find Pokemon names in English here</a
       >
     </p>
 

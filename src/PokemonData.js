@@ -10,12 +10,23 @@ export const extractData = (pokemonData) => {
 };
 
 export const showData = (data) => {
-  const htmlData = `<dl>
-      <dt>Name: ${data.name}</dt>
-      <dd><img src="${data.img}" alt=""></dd>
-      <dd>ID: ${data.id}</dd>
-      <dt>Types: ${data.types.join(", ")}</dd>
-    </dl>`;
+  const htmlData = `
+    <dl>
+      <dt>Name</dt>
+      <dd>${data.name}</dd>
+    </dl>
+    <img src="${data.img}" alt="${data.name}" class="pokemon-image">
+    <dl>
+      <dt>Type</dt>
+      <dd>${data.types.join(" / ")}</dd>
+    </dl>
+    <div class="button-container">
+      <button class="cry-button" onclick="playPokemonCry(${data.id})">
+        <span class="cry-icon">🔊</span> Play Cry
+      </button>
+    </div>
+    <audio id="pokemonCry" src="https://play.pokemonshowdown.com/audio/cries/${data.name.toLowerCase()}.mp3"></audio>
+  `;
   document.querySelector("#js-result").innerHTML = htmlData;
 };
 
